@@ -164,8 +164,3 @@ function cancel() {
     numB = 0;
     display.value = numB;
 }
-
-//comment
-//comment
-//comment
-//comment
