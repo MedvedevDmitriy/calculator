@@ -1,281 +1,92 @@
-/*
- * What follows is the result of much research on cross-browser styling.
- * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
- * Kroc Camen, and the H5BP dev community and team.
- */
-
-/* ==========================================================================
-   Base styles: opinionated defaults
-   ========================================================================== */
-
-html {
-    color: #222;
-    font-size: 1em;
-    line-height: 1.4;
+@import url(https://fonts.googleapis.com/css?family=Pacifico|Open+Sans|Montserrat);
+body, html {
+    width: 100%;
+    background-color: #9B8F89;
 }
 
-/*
- * Remove text-shadow in selection highlight:
- * https://twitter.com/miketaylr/status/12228805301
- *
- * Vendor-prefixed and regular ::selection selectors cannot be combined:
- * https://stackoverflow.com/a/16982510/7133471
- *
- * Customize the background color to match your design.
- */
-
-::selection {
-    background: #b3d4fc;
-    text-shadow: none;
+.calculator {
+    width: 250px;
+    height: 335px;
+    background-color: #F3EEE7;
+    margin: 0 auto;
+    border-top-left-radius: 80% 20px;
+    border-top-right-radius: 80% 20px;
+    border-bottom-left-radius: 80% 20px;
+    border-bottom-right-radius: 80% 20px;
+    box-shadow: inset 5px 0 10px -5px #635e61, inset -5px 0 10px -5px #635e61, inset 0px -5px 10px -2px #635e61, 0 0 1px 2px #635e61, 0 10px 20px 0 #494547;
+    text-align: center;
 }
-
-/*
- * A better looking default horizontal rule
- */
-
-hr {
+.calculator p#title {
+    padding-top: 10px;
+    margin-bottom: -10px;
+    color: #7d777b;
+    font-family: 'Pacifico';
+}
+.calculator p#tagline {
+    text-transform: uppercase;
+    color: #969194;
+    font-family: 'Open Sans';
+    font-size: .7em;
+}
+.calculator input[type='text'] {
+    background-color: #C7C7B0;
+    border: 1px solid #b2b292;
+    line-height: 40px;
+    width: 80%;
+    font-size: 2em;
+    direction: rtl;
+    font-family: 'Montserrat';
+    padding-right: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    box-shadow: inset 0px -2px 10px #b2b292;
+}
+.calculator input[type='text']:focus {
+    outline: none;
+}
+.calculator .row {
     display: block;
-    height: 1px;
-    border: 0;
-    border-top: 1px solid #ccc;
-    margin: 1em 0;
-    padding: 0;
 }
-
-/*
- * Remove the gap between audio, canvas, iframes,
- * images, videos and the bottom of their containers:
- * https://github.com/h5bp/html5-boilerplate/issues/440
- */
-
-audio,
-canvas,
-iframe,
-img,
-svg,
-video {
-    vertical-align: middle;
+.calculator .row input {
+    width: 40px;
+    height: 30px;
+    border: 1px solid #4B4657;
+    border-top: 2px solid #7c748f;
+    background-image: -webkit-linear-gradient( top , #4B4657, #332f3b);
+    background-image: linear-gradient(to bottom, #4B4657, #332f3b);
+    color: white;
+    font-size: 1.1em;
+    border-radius: 20%;
+    border-top-left-radius: 80% 10px;
+    border-top-right-radius: 80% 10px;
+    border-bottom-left-radius: 100% 10px;
+    border-bottom-right-radius: 100% 10px;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-bottom: 8px;
+    box-shadow: inset 0 1px 4px #7c748f, inset 0 -4px 20px #332f3b, 0 3px 1px 0 #332f3b;
 }
-
-/*
- * Remove default fieldset styles.
- */
-
-fieldset {
-    border: 0;
-    margin: 0;
-    padding: 0;
+.calculator .row input:focus {
+    outline: 0;
 }
-
-/*
- * Allow only vertical resizing of textareas.
- */
-
-textarea {
-    resize: vertical;
+.calculator .row input:active {
+    background-image: -webkit-linear-gradient( bottom , #4B4657, #332f3b);
+    background-image: linear-gradient(to top, #4B4657, #332f3b);
 }
-
-/* ==========================================================================
-   Browser Upgrade Prompt
-   ========================================================================== */
-
-.browserupgrade {
-    margin: 0.2em 0;
-    background: #ccc;
-    color: #000;
-    padding: 0.2em 0;
+.calculator .row .ctrl {
+    border: 1px solid #CC4E5F;
+    border-top: 2px solid #e39da7;
+    background-image: -webkit-linear-gradient( top , #CC4E5F, #b33445);
+    background-image: linear-gradient(to bottom, #CC4E5F, #b33445);
+    box-shadow: inset 0 1px 4px #e39da7, inset 0 -4px 20px #b33445;
 }
-
-/* ==========================================================================
-   Author's custom styles
-   ========================================================================== */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* ==========================================================================
-   Helper classes
-   ========================================================================== */
-
-/*
- * Hide visually and from screen readers
- */
-
-.hidden {
-    display: none !important;
+.calculator .row .ctrl:active {
+    background-image: -webkit-linear-gradient( bottom , #CC4E5F, #b33445);
+    background-image: linear-gradient(to top, #CC4E5F, #b33445);
 }
-
-/*
- * Hide only visually, but have it available for screen readers:
- * https://snook.ca/archives/html_and_css/hiding-content-for-accessibility
- *
- * 1. For long content, line feeds are not interpreted as spaces and small width
- *    causes content to wrap 1 word per line:
- *    https://medium.com/@jessebeach/beware-smushed-off-screen-accessible-text-5952a4c2cbfe
- */
-
-.visuallyhidden {
-    border: 0;
-    clip: rect(0 0 0 0);
-    clip-path: inset(50%);
-    height: 1px;
-    margin: -1px;
-    overflow: hidden;
-    padding: 0;
-    position: absolute;
-    width: 1px;
-    white-space: nowrap; /* 1 */
-}
-
-/*
- * Extends the .visuallyhidden class to allow the element
- * to be focusable when navigated to via the keyboard:
- * https://www.drupal.org/node/897638
- */
-
-.visuallyhidden.focusable:active,
-.visuallyhidden.focusable:focus {
-    clip: auto;
-    clip-path: none;
-    height: auto;
-    margin: 0;
-    overflow: visible;
-    position: static;
-    width: auto;
-    white-space: inherit;
-}
-
-/*
- * Hide visually and from screen readers, but maintain layout
- */
-
-.invisible {
-    visibility: hidden;
-}
-
-/*
- * Clearfix: contain floats
- *
- * For modern browsers
- * 1. The space content is one way to avoid an Opera bug when the
- *    `contenteditable` attribute is included anywhere else in the document.
- *    Otherwise it causes space to appear at the top and bottom of elements
- *    that receive the `clearfix` class.
- * 2. The use of `table` rather than `block` is only necessary if using
- *    `:before` to contain the top-margins of child elements.
- */
-
-.clearfix:before,
-.clearfix:after {
-    content: " "; /* 1 */
-    display: table; /* 2 */
-}
-
-.clearfix:after {
-    clear: both;
-}
-
-/* ==========================================================================
-   EXAMPLE Media Queries for Responsive Design.
-   These examples override the primary ('mobile first') styles.
-   Modify as content requires.
-   ========================================================================== */
-
-@media only screen and (min-width: 35em) {
-    /* Style adjustments for viewports that meet the condition */
-}
-
-@media print,
-       (min-resolution: 1.25dppx),
-       (min-resolution: 120dpi) {
-    /* Style adjustments for high resolution devices */
-}
-
-/* ==========================================================================
-   Print styles.
-   Inlined to avoid the additional HTTP request:
-   http://www.phpied.com/delay-loading-your-print-css/
-   ========================================================================== */
-
-@media print {
-    *,
-    *:before,
-    *:after {
-        background: transparent !important;
-        color: #000 !important; /* Black prints faster:
-                                   http://www.sanbeiji.com/archives/953 */
-        box-shadow: none !important;
-        text-shadow: none !important;
-    }
-
-    a,
-    a:visited {
-        text-decoration: underline;
-    }
-
-    a[href]:after {
-        content: " (" attr(href) ")";
-    }
-
-    abbr[title]:after {
-        content: " (" attr(title) ")";
-    }
-
-    /*
-     * Don't show links that are fragment identifiers,
-     * or use the `javascript:` pseudo protocol
-     */
-
-    a[href^="#"]:after,
-    a[href^="javascript:"]:after {
-        content: "";
-    }
-
-    pre {
-        white-space: pre-wrap !important;
-    }
-    pre,
-    blockquote {
-        border: 1px solid #999;
-        page-break-inside: avoid;
-    }
-
-    /*
-     * Printing Tables:
-     * http://css-discuss.incutio.com/wiki/Printing_Tables
-     */
-
-    thead {
-        display: table-header-group;
-    }
-
-    tr,
-    img {
-        page-break-inside: avoid;
-    }
-
-    p,
-    h2,
-    h3 {
-        orphans: 3;
-        widows: 3;
-    }
-
-    h2,
-    h3 {
-        page-break-after: avoid;
-    }
+.calculator .row .tall {
+    height: 65px;
+    float: right;
+    margin-right: 24px;
+    margin-left: -8px;
 }
