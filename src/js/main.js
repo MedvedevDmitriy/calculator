@@ -113,7 +113,7 @@ function blockedOperations(val) {
     var array = ["btnPlus", "btnMinus", "btnMultiply", "btnDivide"];
     flag = val;
     if (flag) {
-        display.value = "Cannot divide by zero!";
+        display.value = "Error";
         for (let i = 0; i < array.length; i++) {
             document.getElementById(array[i]).disabled = flag;
         }
